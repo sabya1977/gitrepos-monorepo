@@ -51,3 +51,5 @@ git remote -v
 --One-liner alternative (instead of remove + add)
 git remote set-url origin git@github.com:username/repository.git
 
+--Remove existing remote
+git remote remove origin
