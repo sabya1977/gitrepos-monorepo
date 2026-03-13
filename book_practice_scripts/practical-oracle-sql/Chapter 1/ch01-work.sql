@@ -70,3 +70,6 @@ select ys.yr,
  fetch first row only;
  --
  select * from practical.brewery_products where brewery_id = 518;
+ select *
+  from practical.brewery_products where product_id = 5430;
+--

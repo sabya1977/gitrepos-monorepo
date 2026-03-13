@@ -1,0 +1,14 @@
+1. log in to https://container-registry.oracle.com/
+2. Click on Auth Token (if you click on the user name you will get the option)
+3. Copy the auth token and save it somewhere
+4. docker login container-registry.oracle.com and enter user name and in password is your generated auth token. 
+5. docker pull container-registry.oracle.com/database/free:latest
+6. docker volume create oracle26ai-data
+
+7. docker run -d --name oracle26ai `
+  -p 1521:1521 -p 5500:5500 `
+  -e ORACLE_PWD=oracle `
+  -v oracle26ai-data:/opt/oracle/oradata `
+  container-registry.oracle.com/database/free:latest
+8. docker exec -it oracle26ai bash  
+9. sqlplus system/oracle@localhost:1521/FREEPDB1

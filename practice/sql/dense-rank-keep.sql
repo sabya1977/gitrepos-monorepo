@@ -132,6 +132,9 @@ United Kingdom    London              1331    11262000
 United States     New York            5324    18908608
 */
 --
+rem ******************************************************************
+rem                         Example 2 
+rem ******************************************************************
 drop table if exists practice.emp;
 create table practice.emp (
    emp_id     number,
@@ -304,5 +307,4 @@ on e.dept_id = d.dept_id
 on e.job_id = j.job_id
  group by dept_name;
 --
-select *
-  from practice.dept;
+rem ******************************************************************  

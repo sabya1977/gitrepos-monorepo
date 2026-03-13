@@ -47,7 +47,7 @@ column rn            format 9
 select
    customer_id as c_id, customer_name, ordered
  , product_id  as p_id, product_name , qty
-from customer_order_products
+from practical.customer_order_products
 where customer_id in (50042, 50741)
 order by customer_id, product_id;
 
@@ -56,18 +56,18 @@ order by customer_id, product_id;
 select
    brewery_id as b_id, brewery_name
  , product_id as p_id, product_name
-from brewery_products
+from practical.brewery_products
 where brewery_id in (518, 523)
 order by brewery_id, product_id;
 
 -- Listing 2-4. Concatenating the results of two queries
 
 select product_id as p_id, product_name
-from customer_order_products
+from practical.customer_order_products
 where customer_id = 50741
 union all
 select product_id as p_id, product_name
-from brewery_products
+from practical.brewery_products
 where brewery_id = 523;
 
 -- Listing 2-5. Different columns from the two queries
@@ -89,13 +89,13 @@ where brewery_id = 523;
 select
    customer_id as c_or_b_id, customer_name as c_or_b_name
  , product_id as p_id, product_name
-from customer_order_products
+from practical.customer_order_products
 where customer_id = 50741
 union all
 select
    brewery_id, brewery_name
  , product_id as p_id, product_name
-from brewery_products
+from practical.brewery_products
 where brewery_id = 523
 order by product_id;
 
@@ -104,55 +104,64 @@ order by product_id;
 select
    customer_id as c_or_b_id, customer_name as c_or_b_name
  , product_id as p_id, product_name
-from customer_order_products
+from practical.customer_order_products
 where customer_id = 50741
 union all
 select
    brewery_id, brewery_name
  , product_id as p_id, product_name
-from brewery_products
+from practical.brewery_products
 where brewery_id = 523
 order by p_id;
-
+--
 -- Listing 2-6. Union is a true set operation that implicitly performs a distinct of the query result
-
+-- Union of all orders placed by customer 50741 and all products bought from brewery 523
+-- Union is the distinct joined results
+--
 select product_id as p_id, product_name
-from customer_order_products
+from practical.customer_order_products
 where customer_id = 50741
 union
 select product_id as p_id, product_name
-from brewery_products
+from practical.brewery_products
 where brewery_id = 523
 order by p_id;
 
 -- Where union is the distinct joined results, intersect is the distinct common results
 
 select product_id as p_id, product_name
-from customer_order_products
+from practical.customer_order_products
 where customer_id = 50741
 intersect
 select product_id as p_id, product_name
-from brewery_products
+from practical.brewery_products
 where brewery_id = 523
 order by p_id;
 
 -- Minus is the set subtraction - also known as except
-
+-- Minus is the distinct results from the first result set
+-- that are not in the second result set
+-- minus/except is the opposite of intersect
+-- minus and except have also with all variation which shows all duplicates 
+--
 select product_id as p_id, product_name
-from customer_order_products
+from practical.customer_order_products
 where customer_id = 50741
-minus
+except 
 select product_id as p_id, product_name
-from brewery_products
+from practical.brewery_products
 where brewery_id = 523
 order by p_id;
 
 -- Listing 2-7. The customer product data viewed as a collection type
-
+grant execute on practical.id_name_type to oradev23;
+--
+grant execute on practical.id_name_coll_type to oradev23;
+--
 select
    customer_id as c_id, customer_name
  , product_coll
-from customer_order_products_obj
+from practical.customer_order_products_obj
 where customer_id in (50042, 50741)
 order by customer_id;
 
