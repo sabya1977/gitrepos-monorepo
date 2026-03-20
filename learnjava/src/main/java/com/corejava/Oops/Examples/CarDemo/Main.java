@@ -1,4 +1,4 @@
-package com.corejava.CarDemo;
+package com.corejava.Oops.Examples.CarDemo;
 
 import java.util.ArrayList;
 import java.util.List;

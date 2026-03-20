@@ -1,4 +1,4 @@
-package com.corejava.Oops.RetailApp;
+package com.corejava.Oops.Examples.RetailApp;
 
 public class StoreKeeper {
 
