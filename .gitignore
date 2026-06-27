@@ -88,4 +88,21 @@ bin/
 .vscode/
 
 ### Mac OS ###
-.DS_Store
+.DS_Store# ===============================
+# Oracle SQL and PL/SQL
+# ===============================
+*.zip
+oracle-db-examples
+*.ini
+sample-data/
+*.csv
+*.txt
+*.xlsx
+*.vsdx
+*.docx
+### VS Code ###
+.vscode/
+# ===============================
+# Logs
+# ===============================
+*.log
