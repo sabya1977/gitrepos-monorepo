@@ -1,0 +1,10 @@
+[project]
+name = "automate-boring-stuff"
+version = "0.1.0"
+description = "Learn python"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "ipykernel>=7.1.0",
+    "pyperclip>=1.11.0",
+]
