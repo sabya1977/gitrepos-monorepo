@@ -1,0 +1,71 @@
+# ===============================
+# IntelliJ IDEA
+# ===============================
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+.kotlin
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# ===============================
+# Java build output
+# ===============================
+target/
+build/
+
+# ===============================
+# Gradle
+# ===============================
+.gradle/
+
+# ===============================
+# Logs
+# ===============================
+*.log
+
+# ===============================
+# Temporary / Backup files
+# ===============================
+*.tmp
+*.bak
+*.swp
+
+# ===============================
+# Environment / secrets
+# ===============================
+.env
+*.env
+
+# ===============================
+# Compiled Java files (optional)
+# ===============================
+*.class
+
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store
