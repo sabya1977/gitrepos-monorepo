@@ -1,0 +1,119 @@
+🔹Step 1: Login to Oracle Container Registry
+    Oracle requires license acceptance.
+    Go to: https://container-registry.oracle.com
+    Sign in with your Oracle account
+    Navigate to database > free
+    Click "Accept License Agreement"
+
+🔹Step 2: Pull the Oracle 23ai Image    
+    docker login container-registry.oracle.com
+    # Enter Oracle username/password
+    docker pull container-registry.oracle.com/database/free:latest
+
+🔹Step 3: Run the Container with Persistent Volume
+    Create a persistent volume for the database files:
+      docker volume create oracle26ai-data
+
+🔹Step 4:
+    Now run the container:
+    docker run -d --name oracle26ai -p 1521:1521 -p 5500:5500 -e ORACLE_PWD=oracle -v oracle26ai-data:/opt/oracle/oradata container-registry.oracle.com/database/free:latest
+
+📌 Breakdown:
+    1521: Oracle Listener port
+    5500: Oracle Enterprise Manager Express (web UI)
+    ORACLE_PWD: SYS and SYSTEM password
+    oracle23ai-data: named Docker volume to persist database
+
+🔹Step 4: Wait for Initialization:
+    Check logs:
+    docker logs -f oracle23ai
+
+    Wait until you see:
+        DATABASE IS READY TO USE!
+
+🔹Step 5: Connect to Oracle
+    Using sqlcl or sqlplus or VSCode extension or SQL Developer
+    sqlplus system/oracle@localhost:1521/FREEPDB1
+    sql system/oracle@localhost:1521/FREEPDB1
+
+🔹Step 6: To login into the container
+    docker exec -it oracle23ai bash
+    
+✅ Managing the Container
+    | Action     | Command                           |
+    | ---------- | --------------------------------- |
+    | Stop       |  docker stop oracle23ai           |
+    | Start      |  docker start oracle23ai          |
+    | Remove     |  docker rm -f oracle23ai          |
+    | View Logs  |  docker logs -f oracle23ai        |
+    | Shell into |  docker exec -it oracle23ai bash  |
+    | delete vol |  docker volume rm oracle23ai-data |
+    | list vols  |  docker volume ls                 |
+    | status     |  docker ps -a                     |
+
+🧠 Notes
+    1. Your data is safe as long as the oracle23ai-data volume exists.
+    2. Use docker volume inspect oracle23ai-data to see where it is stored.
+
+🟢Running docker stop oracle23ai will NOT remove the container or image.
+   It only pauses the container (like shutting down a computer), and you 
+   can start it again anytime without re-downloading or reconfiguring anything.
+   
+   docker stop oracle23ai.
+   docker start oracle23ai
+  
+🟢To remove the container
+    docker rm -f oracle23ai
+    This will stop the container and remove it, but your data in the volume 
+    will remain intact.  
+
+🔴DO NOT use docker run again — unless:
+    You deleted the container (with docker rm oracle23ai)
+    You want to recreate it from scratch
+
+    Otherwise, running docker run again with the same name (oracle23ai) will 
+    give you an error like:
+      docker: Error response from daemon: Conflict. The container name "/oracle23ai" 
+      is already in use.
+      You have to remove the old container first with docker rm -f oracle23ai.
+
+✅ Importing datapump files to the Oracle Container:
+      
+    🔹Step 1: Copy the .dmp file to the host machine
+        🔹Login into the Oracle container: docker exec -it oracle23ai bash
+
+        🔹Create a directory to hold the dump file:
+            mkdir -p /opt/oracle/admin/FREEPDB1/dpdump
+
+        🔹Exit the container: exit
+
+        🔹Copy the .dmp file from the host machine to the container:
+            docker cp C:\Users\sabya\gitrepos\non-git\data\21c_data\f1data.dmp oracle23ai:/opt/oracle/admin/FREE/dpdump/
+    
+    🔹Step 2: Create Oracle directory:
+
+        🔹Login to the Oracle container:
+            docker exec -it oracle23ai bash
+
+        🔹Login to sqlplus 
+            sqlplus system/oracle@localhost:1521/FREEPDB1
+
+        🔹Create a directory object for the dump file:
+            CREATE OR REPLACE DIRECTORY dpdump AS '/opt/oracle/admin/FREE/dpdump';
+            GRANT READ, WRITE ON DIRECTORY dpdump TO system;
+
+        🔹Issue import command from the container:
+            impdp system/oracle@FREEPDB1 \
+                  DIRECTORY=dpdump \
+                  DUMPFILE=f1data.dmp \
+                  LOGFILE=import.log
+
+
+
+
+
+
+
+
+
+
