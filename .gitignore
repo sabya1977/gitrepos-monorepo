@@ -1,108 +1,130 @@
-# Virtual environments
-.venv/
+# ==============================================================================
+# Gitignore Template for Developer Monorepo
+# Setup for: Java, Spring Boot, Oracle SQL/PLSQL, VS Code, and JetBrains IDEs
+# ==============================================================================
 
-# Python cache
-__pycache__/
-*.py[cod]
-
-# uv cache (optional, if created)
-# .uv/
-
-# PyCharm
-.idea/
-
-# Test / tool caches
-.pytest_cache/
-.mypy_cache/
-.ruff_cache/
-
-# OS files
+# ------------------------------------------------------------------------------
+# 1. Global / Core System Rules
+# ------------------------------------------------------------------------------
+# Compiled/Binary OS files
+Thumbs.db
+dbjs.data
+Desktop.ini
+$RECYCLE.BIN/
 .DS_Store
-Thumbs.db# ===============================
-# IntelliJ IDEA
-# ===============================
-out/
-!**/src/main/**/out/
-!**/src/test/**/out/
-.kotlin
+.AppleDouble
+.LSOverride
+._*
+
+# Log files and databases
+*.log
+*.sqlite
+
+# ------------------------------------------------------------------------------
+# 2. JetBrains IDEs (IntelliJ IDEA, DataGrip, etc.)
+# ------------------------------------------------------------------------------
+# Covers project-specific configurations while preserving global/shared layouts
 .idea/
 *.iml
-*.ipr
 *.iws
+*.ipr
 out/
+gen/
 
-# ===============================
-# Java build output
-# ===============================
-target/
-build/
+# ------------------------------------------------------------------------------
+# 3. Visual Studio Code
+# ------------------------------------------------------------------------------
+# Exclude workspace configurations that shouldn't be shared across machines
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
+.history/
+*.code-workspace
 
-# ===============================
-# Gradle
-# ===============================
-.gradle/
-
-# ===============================
-# Logs
-# ===============================
-*.log
-
-# ===============================
-# Temporary / Backup files
-# ===============================
-*.tmp
-*.bak
-*.swp
-
-# ===============================
-# Environment / secrets
-# ===============================
-.env
-*.env
-
-# ===============================
-# Compiled Java files (optional)
-# ===============================
+# ------------------------------------------------------------------------------
+# 4. Java Core & Build Automation Tools (Maven / Gradle)
+# ------------------------------------------------------------------------------
+# Compiled Java artifacts
 *.class
-
-### Eclipse ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-bin/
-!**/src/main/**/bin/
-!**/src/test/**/bin/
-
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-
-### VS Code ###
-.vscode/
-
-### Mac OS ###
-.DS_Store# ===============================
-# Oracle SQL and PL/SQL
-# ===============================
+*.pyc
+*.war
+*.nar
+*.ear
+*.jar
 *.zip
-oracle-db-examples
-*.ini
-sample-data/
-*.csv
-*.txt
-*.xlsx
-*.vsdx
-*.docx
-### VS Code ###
-.vscode/
-# ===============================
-# Logs
-# ===============================
-*.log
+*.tar.gz
+*.rar
+
+# Maven build outputs
+**/target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.next
+pom.xml.versionsBackup
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/.maven-wrapper.properties
+
+# Gradle build outputs
+**/.gradle/
+**/build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# Gradle Tooling and Wrappers
+.gradletasknamecache
+gradle-app.setting
+
+# Crash logs
+hs_err_pid*
+replay_pid*
+
+# ------------------------------------------------------------------------------
+# 5. Spring Boot & Cloud Framework Framework Extensions
+# ------------------------------------------------------------------------------
+# Spring Boot application logs and local configurations
+**/logs/
+*.log.gz
+**/help.md
+**/.sts4-cache/
+
+# Sensitive Runtime Properties (Prevent pushing real credentials)
+**/application-dev.properties
+**/application-local.properties
+**/application-dev.yml
+**/application-local.yml
+**/application-*.properties
+**/application-*.yml
+!**/application.properties
+!**/application.yml
+
+# NetBeans specific overrides (if used transitively)
+**/nbproject/private/
+**/nbbuild/
+**/dist/
+**/nbdist/
+**/.nb-gradle/
+
+# ------------------------------------------------------------------------------
+# 6. Oracle SQL, PL/SQL & Database Client Tooling
+# ------------------------------------------------------------------------------
+# SQL Developer, DataGrip, and migration execution outputs
+**/.sqlcli/
+**/SQLDeveloper/
+**/.datagrip/
+*.sql.bak
+*.txt.bak
+
+# Local Environment Variables and Secrets (e.g., wallet locations, DB connections)
+.env
+.env.local
+.env.*.local
+*.wallet
+*.p12
+*.jks
+credentials.xml
+connections.xml
+jdbc.properties
