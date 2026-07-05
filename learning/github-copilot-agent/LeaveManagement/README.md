@@ -1,3 +1,15 @@
+# README document: Employee Leave Management System
+
+**Project:** Employee Leave Management System
+
+**Version:** 1.0
+
+**Status:** Draft
+
+**Author:** GitHub Copilot (Reviewed by Raktim)
+
+**Last Updated:** 2026-07-05
+
 # Employee Leave Management System
 
 An Employee Leave Management System learning project built to explore backend application development with .NET 10, Oracle 26ai, Visual Studio Code, Git, and GitHub Copilot Agent.
