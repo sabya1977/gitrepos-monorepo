@@ -1,8 +1,13 @@
-# README document: Employee Leave Management System
+# README.md document: Employee Leave Management System
+
+# Lesson 3 – The Project Charter (The AI's First Knowledge)
+# README.md describes the Project (application) such as name, description, objectives, 
+# intended users, Technology stack, etc. 
+# The scope of README.md is project/application wide.
 
 **Project:** Employee Leave Management System
 
-**Version:** 1.0
+**Version:** 1.1
 
 **Status:** Draft
 
