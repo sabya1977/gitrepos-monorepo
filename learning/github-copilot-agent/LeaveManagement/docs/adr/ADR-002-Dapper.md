@@ -1,5 +1,7 @@
 # ADR-002: Use Dapper for Database Access
 
+# Lesson 9 - ADR
+
 **Status:** Accepted
 
 **Date:** 2026-07-07
