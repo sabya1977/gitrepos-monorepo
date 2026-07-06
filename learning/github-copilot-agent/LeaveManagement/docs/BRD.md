@@ -1,8 +1,12 @@
 # Business Requirements Document: Employee Leave Management System
 
+# Lesson 5: Creating BRD.md
+# BRD answers what problem are we solving, not How do we solve it. The How part is dealth with 
+# in TDD. 
+
 **Project:** Employee Leave Management System
 
-**Version:** 1.0
+**Version:** 1.1
 
 **Status:** Draft
 
