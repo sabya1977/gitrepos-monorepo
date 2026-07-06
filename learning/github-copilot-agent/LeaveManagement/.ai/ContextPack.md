@@ -1,8 +1,13 @@
 # Context Pack: Employee Leave Management System
 
+# Lesson 4 – ContextPack.md (Teaching the AI About Your Project)
+# ContextPack.md is a pattern that experienced AI-assisted development teams use to provide concise, high-value project context.
+# If README.md is Project Brochure then ContextPack.md is Project Handbook. 
+# Scope 
+
 **Project:** Employee Leave Management System
 
-**Version:** 1.0
+**Version:** 1.1
 
 **Status:** Draft
 
@@ -49,6 +54,7 @@ The application has not been implemented yet.
 -  React
 -  Angular
 -  Blazor
+-  Testing: xUnit (planned)
 - Authentication and authorization approach: undecided.
 - Database migration strategy: undecided.
 - Testing tools and test project structure: undecided.
