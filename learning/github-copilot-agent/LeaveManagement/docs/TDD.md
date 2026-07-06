@@ -1,8 +1,11 @@
 # Technical Design Document: Employee Leave Management System
 
+# Lesson 6 – Technical Design Document (TDD).
+# TDD answers How we will build the application.
+
 **Project:** Employee Leave Management System
 
-**Version:** 1.0
+**Version:** 1.1
 
 **Status:** Draft
 
