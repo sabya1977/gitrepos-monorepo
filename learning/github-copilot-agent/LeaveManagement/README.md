@@ -50,6 +50,7 @@ Additional features will be added only after the core workflow and requirements 
 - Visual Studio Code as the development environment.
 - Git for version control.
 - GitHub Copilot Agent for AI-assisted project planning and development.
+- Dapper for ORM.
 
 ### Planned or To Be Decided
 
