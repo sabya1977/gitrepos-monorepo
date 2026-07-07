@@ -1,9 +1,7 @@
 # Context Pack: Employee Leave Management System
 
 # Lesson 4 – ContextPack.md (Teaching the AI About Your Project)
-# ContextPack.md is a pattern that experienced AI-assisted development teams use to provide concise, high-value project context.
-# If README.md is Project Brochure then ContextPack.md is Project Handbook. 
-# Scope 
+# ContextPack.md is a pattern that experienced AI-assisted development teams use to provide concise, high-value project context. If README.md is Project Brochure then ContextPack.md is Project Handbook. 
 
 **Project:** Employee Leave Management System
 
