@@ -2,11 +2,7 @@
 docker volume create orcl_vol
 
 ## Step 2: Pull and Start the Oracle Database Container
-docker run -d --name oracle26ai \
-  -p 1521:1521 \
-  -v orcl_vol:/opt/oracle/oradata \
-  -e ORACLE_PWD=oracle \
-  container-registry.oracle.com/database/free:latest
+docker run -d --name oracle26ai -p 1521:1521 -v orcl_vol:/opt/oracle/oradata -e ORACLE_PWD=oracle container-registry.oracle.com/database/free:latest
 
 ## Step 3: Monitor Database Initialization
 docker logs -f oracle26ai
