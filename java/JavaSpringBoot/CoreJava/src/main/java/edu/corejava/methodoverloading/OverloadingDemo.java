@@ -1,4 +1,4 @@
-package com.telusko.ch30_method_overloading;
+package edu.corejava.methodoverloading;
 
 class Calculator {
     int add(int... values) {
