@@ -1,2 +1,0 @@
-import demoMain
-demoMain.printmod()

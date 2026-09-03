@@ -1,0 +1,39 @@
+# =========================
+# Virtual Environments (uv)
+# =========================
+.venv/
+env/
+venv/
+ENV/
+
+# =========================
+# Python Cache & Bytecode
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# =========================
+# Environment Variables
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
+# Packaging & Distribution
+# =========================
+build/
+dist/
+*.egg-info/
+*.egg
+
+# =========================
+# Testing & Tooling
+# =========================
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
